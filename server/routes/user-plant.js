@@ -3,11 +3,12 @@ const fs = require('node:fs/promises');
 const path = require("node:path");
 const router = Router();
 const UserPlant = require('../models/UserPlant');
+const Plants = require('../models/Plants');
 
 
 router.get("/user-plants", async (req, res) => {
   try {
-    const articles = await UserPlant.getUserPlants();
+    const articles = await UserPlant.getUserPlants(req.query);
     res.json(articles);
   } catch (error) {
     res.status(500).send(error.message);
@@ -24,20 +25,18 @@ router.post("/user-plants", async (req, res) => {
     body: apiData
   });
   const result = await response.json();
-  const plantName = result.bestMatch;
-  const plantDetails = result.results[0].species;
+  console.log(result);
   if (response.status === 404) {
     return res.status(404).json({
       msg: 'Plante non identifiable'
     });
   }
+  const plantName = result.bestMatch;
+  const plantDetails = result.results[0].species;
   try {
     console.log(plantName, plantDetails);
-    //const plantFromDtabase = await Plant.findOrCreate(plantName, plantDetails);
-    const plantFromDtabase = {
-      id: 1
-    }
-    const filename = +path.join(__dirname, "../uploads/users", `${req.user.id}_${req.body.plant_id}-${Date.now()}.jpg`)
+    const plantFromDtabase = await Plants.findOrCreate({latin_name: plantName}, {latin_name: plantName, name: plantDetails.commonNames[0]});
+    const filename = path.join(__dirname, "../uploads/users", `${req.user.id}_${plantFromDtabase.id}-${Date.now()}.jpg`)
     await fs.writeFile(filename, imgBuffer);
     const article = await UserPlant.createUserPlant({
       image: filename,

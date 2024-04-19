@@ -5,8 +5,8 @@ async function createUserPlant(userplantData) {
   return getUserPlantById(id);
 }
 
-function getUserPlants() {
-  return knex("user_plant").select();
+function getUserPlants(filters = {}) {
+  return knex("user_plant").select().where(filters);
 }
 
 function getUserPlantById(id) {
