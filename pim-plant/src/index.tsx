@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import LoginPage from './pages/LoginPage';
 import Home from './pages/Home';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import {BrowserRouter as Router, Routes, Route, useParams} from "react-router-dom"
+import Layout from './layouts/Layout';
+
+function PlantPage() {
+  const {id} = useParams();
+  const [plantData, setPlantData] = useState(undefined);
+
+  useEffect(() => {
+    console.log(id);
+    fetch("").then(res => res.json()).then(plant => setPlantData(plant));
+  }, [id]);
+  return <p>{id}</p>
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,8 +26,11 @@ root.render(
   <React.StrictMode>
        <Router>
       <Routes>
-        <Route path="/" element={<App/>} />
-        <Route path="/home" element={<Home/>} />
+        <Route path="/" element={<Layout/>} >
+          <Route index element={<App/>} />
+          <Route path="/home" element={<Home/>} />
+          <Route path='/plant/:id' element={<PlantPage/>} />
+        </Route>
         <Route path="/loginpage" element={<LoginPage/>} />
       </Routes>
    </Router>

@@ -1,4 +1,5 @@
 import { useRef, useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 
 const videoConstraints = {
@@ -8,6 +9,7 @@ const videoConstraints = {
 };
 
 const Camera = () => {
+  const navigate = useNavigate();
   const [isCaptureEnable, setCaptureEnable] = useState<boolean>(false);
   const webcamRef = useRef<Webcam>(null);
   const [url, setUrl] = useState<string | null>(null);
@@ -22,7 +24,7 @@ function handleSave () {
     method: "POST",
     headers: {Authorization: "1", "Content-Type": "application/json"},
     body: JSON.stringify({plant_id:1, image:url})
-  })
+  }).then(res => res.json()).then(plant => navigate('/plant/'+plant.id))
 }
   return (
     <>
