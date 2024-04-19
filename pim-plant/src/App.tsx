@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import Camera from './components/camera';
 import DailyStreak from './components/dailystreak';
 import './App.css';
