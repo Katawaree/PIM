@@ -7,7 +7,7 @@ const knex = require("./models/db");
       table.string("e-mail");
       table.string("password");
       table.integer("connexion_streak");
-      table.foreign("code.id").references("sessions.session.id");
+      table.integer("session_id").unsigned().references("id").inTable("sessions"); 
 
     })
     .then(() => {
@@ -20,10 +20,9 @@ const knex = require("./models/db");
   await knex.schema
     .createTable("user_plant", function (table) {
       table.increments("id");
-      table.string("title");
-      table.foreign("plant.id").references("plants.plant.id");
-      table.foreign("user.id").references("users.user.id");
-      table.foreign("image").references("session_plant.image");
+      table.integer("plant_id").unsigned().references("id").inTable("plants");
+      table.integer("user_id").unsigned().references("id").inTable("users");
+      table.string("image")
     })
     .then(() => {
       console.log("Table user_plant created!");
@@ -46,7 +45,7 @@ const knex = require("./models/db");
     await knex.schema
     .createTable("session_plant", function (table) {
       table.increments("id");
-      table.foreign("plant.id").references("plants.plant.id");
+      table.integer("plant_id").unsigned().references("id").inTable("plants");
       table.string("image");
     })
     .then(() => {

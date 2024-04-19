@@ -17,7 +17,13 @@ const Camera = () => {
       setUrl(imageSrc);
     }
   }, [webcamRef]);
-
+function handleSave () {
+  fetch('http://localhost:3001/user-plants', {
+    method: "POST",
+    headers: {Authorization: "1", "Content-Type": "application/json"},
+    body: JSON.stringify({plant_id:1, image:url})
+  })
+}
   return (
     <>
       <header>
@@ -56,7 +62,7 @@ const Camera = () => {
             </button>
           </div>
           <div>
-            <img src={url} alt="Screenshot" />
+            <img src={url} alt="Screenshot" /> <button onClick={handleSave}>Save</button>
           </div>
         </>
       )}
