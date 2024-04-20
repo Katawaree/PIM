@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css'
+import kid_in_a_jungle_with_a_smartphone_in_hand from '../images/backgrounds/kid_in_a_jungle_with_a_smartphone_in_hand.png';
+
 
 interface LoginFormData {
   email: string;
@@ -28,20 +30,21 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="login-page container">
+    <div className="login-page container" >
     <h1>Bienvenue jeune aventurier !</h1>
     <form onSubmit={handleSubmit}>
-    <div>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="e-mail"
-          />
-        </div>
+ <div className="create-account-container">
+  <div className="create-account-text">Crée ton compte</div>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    value={formData.email}
+    onChange={handleChange}
+    required
+    placeholder="e-mail"
+  />
+</div>
         <div>
           <input
             type="password"
@@ -52,6 +55,10 @@ const LoginPage: React.FC = () => {
             required
             placeholder="mot de passe"
           />
+        </div>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+          <input type="checkbox" id="code" name="code" className="checkbox-input" />
+          <label htmlFor="code" className="checkbox-label">Je continue mon aventure avec un code</label>
         </div>
         <button type="submit">COMMENCER</button>
       </form>

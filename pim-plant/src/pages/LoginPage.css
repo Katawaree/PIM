@@ -1,44 +1,75 @@
-/* Import des fonts */
-
 /* LoginPage.css */
 
-
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
 .login-page {
   &.container {
-    background-color: #09B962;
+    background-image: linear-gradient(to bottom, #09B962 60%, #052934 40%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     color: white;
     width: 90%;
     max-width: 600px;
     text-align: center;
-    padding: 30px;
+    padding: 0px;
+    font-family: 'Inknut Antiqua', serif;
   }
 
   h1 {
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 48px;
+    margin-bottom: 300px;
+    margin-top: 100px;
+    line-height: 119%;
   }
 
   label {
     font-size: 20px;
+  } 
+  .create-account-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8DDAB4; 
+    margin-top: -50px; 
   }
-
+  
   input {
-    width: calc(100% - 20px);
+    width: 335px;
+    height: 60px;
     padding: 15px;
-    border-radius: 15px;
+    border-radius: 11px;
     border: 2px solid #29af9f;
     margin-bottom: 20px;
+    background-color: transparent;
+    color: white;
+    font-size: 24px; 
+    font-family: 'Inder', serif;
+  }
+.checkbox-input {
+  width: 27px;
+  height: 26px;
+  margin-right: 50px;
+  border-radius: 5px;
+  border: 2px solid #29af9f;
+}
+
+  .checkbox-label {
+    font-size: 13.5px;
+    font-family: 'Inknut Antiqua', serif;
+    color: #8DDAB4;
+    margin-top: -22px;
   }
 
   button {
-    width: calc(100% - 20px);
+    width: 164px;
+    height: 45px;
     padding: 15px;
-    border-radius: 15px;
-    background-color: #29af9f;
+    border-radius: 11px;
+    background-color: #779f9a81;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: -25px;
+    font-family: 'Inder', serif;
   }
 }
