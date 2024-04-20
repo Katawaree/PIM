@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Routes, Route, useParams} from "react-router-dom"
 import Layout from './layouts/Layout';
+import PagePhoto from './pages/PagePhoto';
 
 function PlantPage() {
   const {id} = useParams();
@@ -32,6 +33,8 @@ root.render(
           <Route path='/plant/:id' element={<PlantPage/>} />
         </Route>
         <Route path="/loginpage" element={<LoginPage/>} />
+        <Route path="/pagephoto" element={<PagePhoto/>} />
+
       </Routes>
    </Router>
   </React.StrictMode>

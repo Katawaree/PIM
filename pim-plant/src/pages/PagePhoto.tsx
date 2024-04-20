@@ -1,8 +1,12 @@
 import React from 'react'
+import Camera from '../components/camera'
+import './PagePhoto.css'
 
 const PagePhoto = () => {
   return (
-    <div>PagePhoto</div>
+    <div className="ScanPage">
+      <Camera />
+      </div>
   )
 }
 
