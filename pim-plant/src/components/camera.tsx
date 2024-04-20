@@ -1,11 +1,11 @@
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 
 const videoConstraints = {
   width: 720,
   height: 360,
-  facingMode: "user"
+  facingMode: "user",
 };
 
 const Camera = () => {
@@ -25,50 +25,44 @@ function handleSave () {
     headers: {Authorization: "1", "Content-Type": "application/json"},
     body: JSON.stringify({plant_id:1, image:url})
   }).then(res => res.json()).then(plant => navigate('/plant/'+plant.id))
-}
-  return (
-    <>
-      <header>
-        <h1>camera app</h1>
-      </header>
-      {isCaptureEnable || (
-        <button onClick={() => setCaptureEnable(true)}>start</button>
-      )}
-      {isCaptureEnable && (
-        <>
-          <div>
-            <button onClick={() => setCaptureEnable(false)}>end </button>
-          </div>
-          <div>
-            <Webcam
-              audio={false}
-              width={540}
-              height={360}
-              ref={webcamRef}
-              screenshotFormat="image/jpeg"
-              videoConstraints={videoConstraints}
-            />
-          </div>
-          <button onClick={capture}>capture</button>
-        </>
-      )}
-      {url && (
-        <>
-          <div>
-            <button
-              onClick={() => {
-                setUrl(null);
-              }}
-            >
-              delete
-            </button>
-          </div>
-          <div>
-            <img src={url} alt="Screenshot" /> <button onClick={handleSave}>Save</button>
-          </div>
-        </>
-      )}
-    </>
-  );
+
+}useEffect(() => {
+  setCaptureEnable(true);
+}, []);
+
+return (
+  <>
+    {isCaptureEnable && (
+      <>
+          <Webcam
+            audio={false}
+            width={720}
+            height={360}
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            videoConstraints={videoConstraints}
+          />
+        <button style={{width:'50px',height:'50px', borderRadius:'180px', color:'white'}} onClick={capture}></button>
+      </>
+    )}
+    {url && (
+      <>
+        <div>
+          <button
+            onClick={() => {
+              setUrl(null);
+            }}
+          >
+            Delete
+          </button>
+        </div>
+        <div>
+          <img src={url} alt="Screenshot" />
+          <button onClick={handleSave}>Save</button>
+        </div>
+      </>
+    )}
+  </>
+);
 };
 export default Camera

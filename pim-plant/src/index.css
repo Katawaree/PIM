@@ -21,19 +21,25 @@ code {
 }
 
 .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
   min-width: 100vw;
   max-width: 100vw;
   min-height: 100vh;
   max-height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  background: linear-gradient(45deg, #054941, #234F55);
 }
 
 .container .main {
+  display: flex;
+  justify-content: space-around;
   flex: 1;
   max-height: 100%;
   overflow-y: scroll;
   min-width: 100%;
   max-width: 100%;
+  background-color: white;
 }

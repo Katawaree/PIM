@@ -16,7 +16,7 @@ router.get("/user-plants", async (req, res) => {
 });
 
 router.post("/user-plants", async (req, res) => {
-  const imgBuffer = Buffer.from(req.body.image.split(',')[1], 'base64');
+  const imgBuffer = Buffer.from(req.body.image.split(',')['1'], 'base64');
   const apiData = new FormData();
   const blob = new Blob([imgBuffer]);
   apiData.append('images', blob);
