@@ -1,1 +1,28 @@
-.home .test {}
+/* Home.css*/
+
+.home-page {
+   &.container { 
+    background-image: url('../images/backgrounds/background_home.png');
+    background-size: 448px 824px; /* ou spécifiez la taille souhaitée */
+    background-position: center; /* ou spécifiez la position souhaitée */
+    background-repeat: no-repeat; /* ou spécifiez le comportement de répétition souhaité */
+    /* Autres styles pour le contenu de la page */
+  }
+  /* Ajoutez ces styles à votre fichier CSS existant ou créez un nouveau fichier pour les styles du carousel */
+
+.carousel-container {
+  margin: auto;
+  width: 70%;
+  color:black ;
+}
+
+.carousel-container .carousel {
+  border-radius: 10px;
+}
+
+.carousel-container .carousel .slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+}

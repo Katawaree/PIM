@@ -4,16 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
 .login-page {
   &.container {
-    background-image: linear-gradient(to bottom, #09B962 60%, #052934 40%);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: white;
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-    padding: 0px;
-    font-family: 'Inknut Antiqua', serif;
-  }
+      width: 90%;
+      max-width: 600px;
+      color: white;
+      text-align: center;
+      padding: 0px;
+      font-family: 'Inknut Antiqua', serif;
+      background-image: url("/d:/jawad/L/PIM/pim-plant/src/pages/backgrounds/Connexion.png");
+
+    }
 
   h1 {
     font-size: 48px;
