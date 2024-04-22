@@ -11,13 +11,14 @@ import PagePhoto from './pages/PagePhoto';
 
 function PlantPage() {
   const {id} = useParams();
+  const {latin_name} = useParams();
   const [plantData, setPlantData] = useState(undefined);
 
   useEffect(() => {
-    console.log(id);
-    fetch("").then(res => res.json()).then(plant => setPlantData(plant));
-  }, [id]);
-  return <p>{id}</p>
+    console.log(id, latin_name);
+    fetch("http://localhost:3001/routes/plants").then(res => res.json()).then(plant => setPlantData(plant));
+  }, [latin_name] );
+  return <p>{id}, {latin_name}</p>
 }
 
 const root = ReactDOM.createRoot(

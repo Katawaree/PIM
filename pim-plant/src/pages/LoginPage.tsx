@@ -60,7 +60,7 @@ const LoginPage: React.FC = () => {
           <input type="checkbox" id="code" name="code" className="checkbox-input" />
           <label htmlFor="code" className="checkbox-label">Je continue mon aventure avec un code</label>
         </div>
-        <button type="submit">COMMENCER</button>
+        <Link to ="home"><button type="submit">COMMENCER</button></Link>
       </form>
     </div>
   );

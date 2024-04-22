@@ -36,8 +36,8 @@ return (
       <>
           <Webcam
             audio={false}
-            width={720}
-            height={360}
+            width={400}
+            height={400}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
