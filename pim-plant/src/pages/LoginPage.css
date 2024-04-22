@@ -10,7 +10,7 @@
       text-align: center;
       padding: 0px;
       font-family: 'Inknut Antiqua', serif;
-      background-image: url("/d:/jawad/L/PIM/pim-plant/src/pages/backgrounds/Connexion.png");
+      background-image: url('./backgrounds/Connexion.png');
 
     }
 

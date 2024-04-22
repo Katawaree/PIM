@@ -38,7 +38,7 @@ function DailyStreak() {
 
   return (
     <div>
-      <p>Nombre de connexions successives : {connectionCount}</p>
+      <p>{connectionCount}</p>
     </div>
   );
 }

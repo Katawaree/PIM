@@ -1,4 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+
 .carousel-container {
   margin: auto;
   width: 100%;
+}
+.top-image {
+  position: absolute;
+  top: 40px; 
+  left: 25px;
+  z-index: 999;
+}
+.daily-streak {
+  position: absolute; 
+  top: 170px; 
+  left: 65%;
+  transform: translateX(-50%);
+  z-index: 1000; 
+  font-size: 28px;
+  color: #0AB963; 
+  font-family: 'Inder', serif;
 }
