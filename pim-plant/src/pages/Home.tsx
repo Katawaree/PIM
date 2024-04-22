@@ -39,8 +39,9 @@ const Home: React.FC = () => {
 
         </Carousel>
       </div>
+      <h2 style={{ textAlign: 'center', marginTop: '20px', marginBottom: '-40px', marginLeft: '-100px',color: 'black' }}>Plantes Légendaires</h2>
       <div className="map-container" style={{ textAlign: 'center', marginTop: '50px', width: 'calc(100% - 40px)', marginLeft: '20px', marginRight: '20px' }}>
-        <iframe src="https://www.google.com/maps/embed?mid=1IEC4YNpWO9-lmLuDiGnHYMCjCojprpU&output=embed" width="100%" height="250" style={{ border: 'none' }}></iframe> {/* Ajouter le style pour supprimer la bordure */}
+        <iframe src="https://www.google.com/maps/embed?mid=1IEC4YNpWO9-lmLuDiGnHYMCjCojprpU&output=embed" width="100%" height="250" style={{ border: 'none' }}></iframe> {}
       </div>
     </div>
   );

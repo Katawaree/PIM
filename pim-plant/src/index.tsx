@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import LoginPage from './pages/LoginPage';
+import PageCollection from './pages/PageCollection';
 import Home from './pages/Home';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Routes, Route, useParams} from "react-router-dom"
@@ -29,6 +30,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Layout/>} >
           <Route index element={<App/>} />
+          <Route path="/pagecollection" element={<PageCollection/>} />
           <Route path="/home" element={<Home/>} />
           <Route path='/plant/:id' element={<PlantPage/>} />
         </Route>

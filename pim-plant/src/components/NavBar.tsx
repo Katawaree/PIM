@@ -5,7 +5,6 @@
   import './NavBar.module.css'
   import PageCollection from '../pages/PageCollection'
   import pokedex from '../images/icons/pokedex.png'
-
   const NavBar = () => {
     return (
       <div className='Nav'>
