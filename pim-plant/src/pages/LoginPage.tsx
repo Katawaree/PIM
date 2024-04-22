@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css'
-import kid_in_a_jungle_with_a_smartphone_in_hand from '../images/backgrounds/kid_in_a_jungle_with_a_smartphone_in_hand.png';
+import kid_in_a_jungle_with_a_smartphone_in_hand from '../pages/backgrounds/kid_in_a_jungle_with_a_smartphone_in_hand.png';
 
 
 interface LoginFormData {
@@ -25,7 +25,7 @@ const LoginPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission, for example, send data to server for authentication
+    
     console.log('Form submitted:', formData);
   };
 

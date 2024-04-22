@@ -2,37 +2,33 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import './Home.css';
-import { Carousel } from 'react-responsive-carousel'; // Import du Carousel
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import des styles du Carousel
-import background_home from '../images/backgrounds/background_home.png';
+import { Carousel } from 'react-responsive-carousel'; 
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
+import background_home from '../pages/backgrounds/background_home.png'; 
+import Carousel1 from '../pages/backgrounds/Carousel1.png'; 
+import Carousel2 from '../pages/backgrounds/Carousel2.png'; 
+import Carousel3 from '../pages/backgrounds/Carousel3.png'; 
 
 const Home: React.FC = () => {
 
   useEffect(() => {
-    //fetch("url backend")
-    //.then((res) => res.json())
-    //.then(data => console.log(data))
+    
   }, []);
 
   return (
     <div className='Home' style={{ backgroundImage: `url(${background_home})` }}>
-      <h1>Home</h1>
-      <Link to="/home">Go to Home</Link>
-
-      <div className="carousel-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', border: '1px solid black', padding: '10px', marginTop: '300px' }}> {/* Container pour le carousel */}
+      <div className="carousel-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px', marginTop: '300px' }}> {}
         <Carousel showThumbs={false} showStatus={false} infiniteLoop autoPlay>
           <div>
-            <img src="image1.jpg" alt="Image 1" />
+            <img src={Carousel1} alt="Carousel" />
           </div>
           <div>
-            <img src="image2.jpg" alt="Image 2" />
+            <img src={Carousel2} alt="Carousel2" />
           </div>
           <div>
-            <img src="image3.jpg" alt="Image 3" />
+            <img src={Carousel3} alt="Carousel3" />
           </div>
-          <div>
-            <img src="image4.jpg" alt="Image 4" />
-          </div>
+
         </Carousel>
       </div>
     </div>
